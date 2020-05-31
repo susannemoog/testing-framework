@@ -32,7 +32,7 @@ class Acceptance extends Module
     {
         if ($step->getAction() === 'click') {
             $this->debug('Waiting for nprogress to hide...');
-            $this->getModule('WebDriver')->waitForElementNotVisible('#nprogress', 10);
+            $this->getModule('WebDriver')->waitForElementNotVisible('#nprogress');
         }
     }
 

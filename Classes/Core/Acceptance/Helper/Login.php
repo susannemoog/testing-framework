@@ -70,6 +70,7 @@ class Login extends Module
         // reload the page to have a logged in backend
         $wd->amOnPage('/typo3/index.php');
 
+        $wd->waitForElement('#typo3-contentIframe');
         // Ensure main content frame is fully loaded, otherwise there are load-race-conditions
         $wd->switchToIFrame('list_frame');
         $wd->waitForElement(Locator::firstElement('div.module'));
