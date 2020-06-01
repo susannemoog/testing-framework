@@ -209,6 +209,8 @@ abstract class BackendEnvironment extends Extension
         $this->config['typo3DatabaseDriver'] = is_string($env) ? trim($env) : $this->config['typo3DatabaseDriver'];
         $env = getenv('typo3DatabaseCharset');
         $this->config['typo3DatabaseCharset'] = is_string($env) ? trim($env) : $this->config['typo3DatabaseCharset'];
+        $env = getenv('typo3DatabasePath');
+        $this->config['typo3DatabasePath'] = is_string($env) ? trim($env) : $this->config['typo3DatabaseCharset'];
     }
 
     /**

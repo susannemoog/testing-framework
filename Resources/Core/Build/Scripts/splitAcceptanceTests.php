@@ -89,7 +89,7 @@ class SplitAcceptanceTests extends NodeVisitorAbstract
         foreach ($testFiles as $file) {
             /** @var $file SplFileInfo */
             $relativeFilename = $file->getRealPath();
-            preg_match('/.*typo3\/sysext\/(.*)$/', $relativeFilename, $matches);
+            preg_match('/.*typo3\/sysext\/(.*)$/', \TYPO3\CMS\Core\Utility\GeneralUtility::fixWindowsFilePath($relativeFilename), $matches);
             $relativeFilename = '../../../../../../typo3/sysext/' . $matches[1];
 
             $ast = $parser->parse($file->getContents());
